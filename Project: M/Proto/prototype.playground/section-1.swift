@@ -4,9 +4,9 @@ import UIKit
 
 //Model Object Definitions
 class Task {
-    var name: String
-    var details: String
-    var list: Array<Task>
+    var name: String = ""
+    var details: String = ""
+    var list: Array<Task> = []
     
     init(name: String, details: String, list: Array<Task>)
     {
@@ -65,37 +65,58 @@ master.list.extend([writing, reading, profit])
 master.description() //Make sure everything looks good
 
 //View Definitions
+class ViewManager: NSObject {
+
+}
+
 class TaskListView: UICollectionView {
     init(frame: CGRect) {
         let layout = UICollectionViewFlowLayout()
         super.init(frame: frame, collectionViewLayout: layout)
-        self.backgroundColor = UIColor.blueColor()
+        self.backgroundColor = UIColor.whiteColor()
+        
+        layout.itemSize = CGSizeMake(320, 40)
+        layout.sectionInset = UIEdgeInsetsMake(10, 0, 10, 0)
     }
 }
+
+var handle = Array<UIView>()
 
 class TaskView: UICollectionViewCell {
     init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.clearColor()
+    }
+    
+    func configure(name: String, details: String) {
+        let nameLabel = UILabel(frame: self.contentView.frame)
+        nameLabel.text = name
+        self.contentView.addSubview(nameLabel)
     }
 }
+
+//TODO: Create a ViewModel for properly displaying Cells.
 
 //View Manager
-class ViewManager: NSObject {
-    
-}
-
 extension ViewManager: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
-        return 0 //todo
+        return master.list.count
     }
     
-    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
-        return nil //todo
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("task", forIndexPath: indexPath) as TaskView
+        
+        let item = master.list[indexPath.item]
+        
+        cell.configure(item.name, details: item.details)
+        
+        return cell
     }
 }
 
-let masterView = TaskListView(frame: CGRectMake(0, 0, 300, 300))
+let masterView = TaskListView(frame: CGRectMake(0, 0, 350, 500))
+masterView.registerClass(TaskView.self, forCellWithReuseIdentifier: "task")
+let ds = ViewManager()
+masterView.dataSource = ds
 
 masterView
