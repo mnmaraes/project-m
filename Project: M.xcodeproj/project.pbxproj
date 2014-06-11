@@ -10,6 +10,7 @@
 		EBB7CC3B1947C78C00F1D93D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB7CC3A1947C78C00F1D93D /* AppDelegate.swift */; };
 		EBB7CC3D1947C78C00F1D93D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB7CC3C1947C78C00F1D93D /* Images.xcassets */; };
 		EBB7CC491947C78D00F1D93D /* Project__MTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB7CC481947C78D00F1D93D /* Project__MTests.swift */; };
+		EBB7CC581947D12C00F1D93D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB7CC571947D12C00F1D93D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,8 @@
 		EBB7CC421947C78D00F1D93D /* Project: MTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project: MTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB7CC471947C78D00F1D93D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBB7CC481947C78D00F1D93D /* Project__MTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project__MTests.swift; sourceTree = "<group>"; };
+		EBB7CC571947D12C00F1D93D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EBBBEE241947D7F8005794FE /* prototype.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = prototype.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 		EBB7CC371947C78C00F1D93D /* Project: M */ = {
 			isa = PBXGroup;
 			children = (
+				EBB7CC531947CFF800F1D93D /* Proto */,
 				EBB7CC3A1947C78C00F1D93D /* AppDelegate.swift */,
 				EBB7CC3C1947C78C00F1D93D /* Images.xcassets */,
 				EBB7CC381947C78C00F1D93D /* Supporting Files */,
@@ -101,6 +105,23 @@
 				EBB7CC471947C78D00F1D93D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBB7CC531947CFF800F1D93D /* Proto */ = {
+			isa = PBXGroup;
+			children = (
+				EBB7CC541947D01300F1D93D /* Views */,
+				EBBBEE241947D7F8005794FE /* prototype.playground */,
+			);
+			path = Proto;
+			sourceTree = "<group>";
+		};
+		EBB7CC541947D01300F1D93D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EBB7CC571947D12C00F1D93D /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBB7CC581947D12C00F1D93D /* Main.storyboard in Resources */,
 				EBB7CC3D1947C78C00F1D93D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +401,7 @@
 				EBB7CC4E1947C78D00F1D93D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBB7CC4F1947C78D00F1D93D /* Build configuration list for PBXNativeTarget "Project: MTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +410,7 @@
 				EBB7CC511947C78D00F1D93D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
