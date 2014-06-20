@@ -16,11 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        // Override point for customization after application launch.
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as UIViewController
-        
-        self.window!.rootViewController = controller
-        self.window!.backgroundColor = UIColor.whiteColor()
+        self.window!.rootViewController = ViewController()
         self.window!.makeKeyAndVisible()
         return true
     }
