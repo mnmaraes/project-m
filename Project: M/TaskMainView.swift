@@ -21,16 +21,14 @@ class TaskMainView: UIView {
     //Subviews
     weak var nameLabel: UILabel?
     weak var detailLabel: UILabel?
-    weak var controlView: UIView?
+    weak var controlView: UIToolbar?
     weak var listView: UITableView?
     
     init(viewModel: TaskViewModel) {
         self.viewModel = viewModel
         self.tableViewManager = TaskTableViewManager(viewModel: viewModel)
-        self.specs = [TaskMainLayout()]
+        self.specs = [TaskMainLayout(), TaskMainMetrics()]
         super.init(frame: CGRectZero)
-        
-        self.backgroundColor = UIColor.whiteColor()
         
         createSubviews()
         bindToViewModel()
@@ -39,7 +37,7 @@ class TaskMainView: UIView {
     
     //Init Methods
     func createSubviews(){
-        let nLabel = UILabel(), dLabel = UILabel(), cView = UIView(), lView = UITableView()
+        let nLabel = UILabel(), dLabel = UILabel(), cView = UIToolbar(), lView = UITableView()
         self.nameLabel = nLabel; self.detailLabel = dLabel; self.controlView = cView; self.listView = lView
         
         self.addSubview(nLabel); self.addSubview(dLabel); self.addSubview(cView); self.addSubview(lView)
